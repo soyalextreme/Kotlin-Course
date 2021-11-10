@@ -1,3 +1,6 @@
+import java.lang.Exception
+import java.lang.NullPointerException
+
 // Constantes antes de la funcion
 // Variables generadas antes de la funcion
 // Declarar en tiempo de compilacion
@@ -113,18 +116,47 @@ fun main(args: Array<String>) {
 //        println("Random num: $numRandom")
 //    }while (numRandom < 50)
 
-    val fruitsList = listOf<String>("Apple", "Strawberry", "Peach")
-    for (fruit in fruitsList) {
-        println("Fruit is $fruit")
+//    val fruitsList = listOf<String>("Apple", "Strawberry", "Peach")
+//    for (fruit in fruitsList) {
+//        println("Fruit is $fruit")
+//    }
+//
+//    fruitsList.forEach { newFruit -> println("Fruit of each is $newFruit") }
+//
+//    val charOfFruits: List<Int> = fruitsList.map { f -> f.length }
+//
+//    println(charOfFruits)
+//
+//    val filterList = charOfFruits.filter { fCharAmount -> fCharAmount > 5 }
+//    // should print only strawberry
+//    println(filterList)
+
+    var nombre: String? = null
+
+/*
+* Double bang
+* Mala practica porque no nos aseguramos que no sea null
+* puede marcar error
+* NullPointerException
+* */
+//    nombre!!.length
+
+    try {
+        throw NullPointerException("Null Error reference")
+    } catch (e : NullPointerException){
+        println("$e")
+    } finally {
+       println("Closing app, error detected")
     }
 
-    fruitsList.forEach { newFruit -> println("Fruit of each is $newFruit") }
-
-    val charOfFruits: List<Int> = fruitsList.map { f -> f.length }
-
-    println(charOfFruits)
-
-    val filterList = charOfFruits.filter { fCharAmount -> fCharAmount > 5 }
-    // should print only strawberry
-    println(filterList)
+    val valA = 0
+    val valB = 10
+    val result: Int = try {
+        valB/valA
+    }catch (e: Exception){
+        println("$e")
+        // last line returns the value
+        0
+    }
+    println(result)
 }
