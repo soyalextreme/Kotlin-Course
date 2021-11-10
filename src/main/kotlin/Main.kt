@@ -65,35 +65,51 @@ fun main(args: Array<String>) {
 
     // WHEN DATA CONTROL
 
-    val colorName= "Carmesi"
+//    val colorName= "Carmesi"
+//
+//    when (colorName.lowercase()) {
+//        "yellow" -> {
+//            val anotherTask = true
+//            println("$colorName is the color of joy ")
+//        }
+//        "red", "carmesi" -> println("$colorName is the color of blood")
+//        else -> println("Ups! Color is not registered")
+//    }
+//
+//    val codeNum = 501
+//    when (codeNum) {
+//        in 200..299 -> println("Response $codeNum , Everything on order!")
+//        in 400..500 -> println("Response $codeNum , Something went wrong")
+//        else -> println("$codeNum no code register for this response")
+//    }
+////    if (name.isNotEmpty()) println("Len of name is ${name.length}") else println("name is empty ")
+//
+//    val shoesSize = 45
+//
+//    // with assign to the value we always need to include de else for the
+//    // default value
+//    val msj = when(shoesSize){
+//        41, 43 -> "Size available"
+//        42, 44 -> "Short Stack"
+//        45 -> "Only by order! your a big foot"
+//        else -> "No stack"
+//    }
+//
+//    println(msj)
 
-    when (colorName.lowercase()) {
-        "yellow" -> {
-            val anotherTask = true
-            println("$colorName is the color of joy ")
-        }
-        "red", "carmesi" -> println("$colorName is the color of blood")
-        else -> println("Ups! Color is not registered")
+
+    var counter = 10
+
+    while (counter > 0){
+        println("Counter val: $counter")
+       counter--
     }
 
-    val codeNum = 501
-    when (codeNum) {
-        in 200..299 -> println("Response $codeNum , Everything on order!")
-        in 400..500 -> println("Response $codeNum , Something went wrong")
-        else -> println("$codeNum no code register for this response")
-    }
-//    if (name.isNotEmpty()) println("Len of name is ${name.length}") else println("name is empty ")
 
-    val shoesSize = 45
 
-    // with assign to the value we always need to include de else for the
-    // default value
-    val msj = when(shoesSize){
-        41, 43 -> "Size available"
-        42, 44 -> "Short Stack"
-        45 -> "Only by order! your a big foot"
-        else -> "No stack"
-    }
-
-    println(msj)
+    do {
+        println("Generating num random")
+        val numRandom = (0..100).random()
+        println("Random num: $numRandom")
+    }while (numRandom < 50)
 }
