@@ -131,7 +131,7 @@ fun main(args: Array<String>) {
 //    // should print only strawberry
 //    println(filterList)
 
-    var nombre: String? = null
+//    var nombre: String? = null
 
 /*
 * Double bang
@@ -141,22 +141,75 @@ fun main(args: Array<String>) {
 * */
 //    nombre!!.length
 
-    try {
-        throw NullPointerException("Null Error reference")
-    } catch (e : NullPointerException){
-        println("$e")
-    } finally {
-       println("Closing app, error detected")
-    }
+//    try {
+//        throw NullPointerException("Null Error reference")
+//    } catch (e : NullPointerException){
+//        println("$e")
+//    } finally {
+//       println("Closing app, error detected")
+//    }
+//
+//    val valA = 0
+//    val valB = 10
+//    val result: Int = try {
+//        valB/valA
+//    }catch (e: Exception){
+//        println("$e")
+//        // last line returns the value
+//        0
+//    }
+//    println(result)
 
-    val valA = 0
-    val valB = 10
-    val result: Int = try {
-        valB/valA
-    }catch (e: Exception){
-        println("$e")
-        // last line returns the value
-        0
-    }
-    println(result)
+//    var name: String? = null
+//    // Elvis Operator
+//    /* ?: [default value]
+//    * Da un valor predeterminado en el caso de que el valor
+//    * sea null.
+//    *
+//    * */
+//    val charName: Int = name?.length ?: 0
+//    print("$name $charName")
+
+    // INMUTABLE
+    val nameList = listOf<String>("Alejandro", "Fernando", "Camila")
+    println(nameList)
+
+    // MUTABLE
+    val mutableList = mutableListOf<String>()
+    println(mutableList)
+    mutableList.add("Alfredo")
+    println(mutableList)
+
+
+    // OPERADOR INDEXADO
+    val usingIndex = mutableList[0]
+    // USING FUN GET
+    val usingGet = mutableList.get(0)
+    println(usingGet)
+    println(usingIndex)
+
+    // RETURNS FIRST VALUE
+    val firstValue: String? = nameList.firstOrNull { name -> name.startsWith("F") }
+    println(firstValue)
+
+    // REMOVE AT
+    mutableList.removeAt(0)
+    println(mutableList)
+
+    mutableList.add("Li")
+    mutableList.add("Alejandro")
+    mutableList.add("Sho")
+
+    // REMOVE IF FUN
+    mutableList.removeIf { name -> name.length > 3 }
+    println(mutableList)
+
+    // ARRAY
+    // ARRAY + MAS PERFORMANCE
+    val myArr = arrayOf(1, 2, 3, 4, 5)
+    println("My arr: $myArr")
+    // print array as cast
+    println("Arr as list: ${myArr.toList()}")
+
+
 }
