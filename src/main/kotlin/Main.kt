@@ -98,18 +98,33 @@ fun main(args: Array<String>) {
 //    println(msj)
 
 
-    var counter = 10
+//    var counter = 10
 
-    while (counter > 0){
-        println("Counter val: $counter")
-       counter--
+//    while (counter > 0){
+//        println("Counter val: $counter")
+//       counter--
+//    }
+//
+//
+//
+//    do {
+//        println("Generating num random")
+//        val numRandom = (0..100).random()
+//        println("Random num: $numRandom")
+//    }while (numRandom < 50)
+
+    val fruitsList = listOf<String>("Apple", "Strawberry", "Peach")
+    for (fruit in fruitsList) {
+        println("Fruit is $fruit")
     }
 
+    fruitsList.forEach { newFruit -> println("Fruit of each is $newFruit") }
 
+    val charOfFruits: List<Int> = fruitsList.map { f -> f.length }
 
-    do {
-        println("Generating num random")
-        val numRandom = (0..100).random()
-        println("Random num: $numRandom")
-    }while (numRandom < 50)
+    println(charOfFruits)
+
+    val filterList = charOfFruits.filter { fCharAmount -> fCharAmount > 5 }
+    // should print only strawberry
+    println(filterList)
 }
