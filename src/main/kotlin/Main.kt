@@ -1,5 +1,6 @@
 import java.lang.Exception
 import java.lang.NullPointerException
+import java.util.*
 
 // Constantes antes de la funcion
 // Variables generadas antes de la funcion
@@ -170,46 +171,81 @@ fun main(args: Array<String>) {
 //    val charName: Int = name?.length ?: 0
 //    print("$name $charName")
 
-    // INMUTABLE
-    val nameList = listOf<String>("Alejandro", "Fernando", "Camila")
-    println(nameList)
+//    // INMUTABLE
+//    val nameList = listOf<String>("Alejandro", "Fernando", "Camila")
+//    println(nameList)
+//
+//    // MUTABLE
+//    val mutableList = mutableListOf<String>()
+//    println(mutableList)
+//    mutableList.add("Alfredo")
+//    println(mutableList)
+//
+//
+//    // OPERADOR INDEXADO
+//    val usingIndex = mutableList[0]
+//    // USING FUN GET
+//    val usingGet = mutableList.get(0)
+//    println(usingGet)
+//    println(usingIndex)
+//
+//    // RETURNS FIRST VALUE
+//    val firstValue: String? = nameList.firstOrNull { name -> name.startsWith("F") }
+//    println(firstValue)
+//
+//    // REMOVE AT
+//    mutableList.removeAt(0)
+//    println(mutableList)
+//
+//    mutableList.add("Li")
+//    mutableList.add("Alejandro")
+//    mutableList.add("Sho")
+//
+//    // REMOVE IF FUN
+//    mutableList.removeIf { name -> name.length > 3 }
+//    println(mutableList)
+//
+//    // ARRAY
+//    // ARRAY + MAS PERFORMANCE
+//    val myArr = arrayOf(1, 2, 3, 4, 5)
+//    println("My arr: $myArr")
+//    // print array as cast
+//    println("Arr as list: ${myArr.toList()}")
 
-    // MUTABLE
-    val mutableList = mutableListOf<String>()
-    println(mutableList)
-    mutableList.add("Alfredo")
-    println(mutableList)
+    // SORT METHODS
 
+    var lotNum = listOf<Int>(11, 22, 43, 56, 78, 66)
+    var lotNumSorted = lotNum.sorted()
+    println(lotNum)
+    println(lotNumSorted)
 
-    // OPERADOR INDEXADO
-    val usingIndex = mutableList[0]
-    // USING FUN GET
-    val usingGet = mutableList.get(0)
-    println(usingGet)
-    println(usingIndex)
+    //ORDEN DESCENDENTE
+    val lotNumDesSorted = lotNum.sortedDescending()
+    println(lotNumDesSorted)
 
-    // RETURNS FIRST VALUE
-    val firstValue: String? = nameList.firstOrNull { name -> name.startsWith("F") }
-    println(firstValue)
+    // ORDEN POR PARAMETRO
+    val multipleSorted = lotNum.sortedBy { num -> num < 50 }
+    println(multipleSorted)
 
-    // REMOVE AT
-    mutableList.removeAt(0)
-    println(mutableList)
+    // cambia random la posicion
+    val randomNum = lotNum.shuffled()
+    println(randomNum)
 
-    mutableList.add("Li")
-    mutableList.add("Alejandro")
-    mutableList.add("Sho")
+    // INVERTIR LIST
+    val numReverse = lotNum.reversed()
+    println(numReverse)
 
-    // REMOVE IF FUN
-    mutableList.removeIf { name -> name.length > 3 }
-    println(mutableList)
+    // MAP
+    val msjNum: List<String> = lotNum.map { num ->
+//        println("Debug")
+        "Tu numero de loteria es: $num"
+    }
+    println(msjNum)
 
-    // ARRAY
-    // ARRAY + MAS PERFORMANCE
-    val myArr = arrayOf(1, 2, 3, 4, 5)
-    println("My arr: $myArr")
-    // print array as cast
-    println("Arr as list: ${myArr.toList()}")
-
+    // FILTER + MAP
+    // CONCAT METHODS
+    val numFilter: List<String> = lotNum.filter { num -> num > 50 }
+        .map { numFiltered-> "Num: $numFiltered" }
+    println(numFilter)
 
 }
