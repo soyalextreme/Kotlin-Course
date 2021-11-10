@@ -41,28 +41,59 @@ fun main(args: Array<String>) {
 //    val fullName: String = "My name is $name $lastName and Im $age old"
 //    println(fullName)
 
-    val name = "Li"
+//    val name = "Li"
+//
+//
+//    if (name.isNotEmpty()) {
+//        println("Len of the name ${name.length}")
+//    } else {
+//        println("Error! Empty name")
+//    }
+//
+//    // asignacion inmutable
+//    val msj: String = if (name.length > 4) {
+//        "Your name is long"
+//    }  else if (name.isEmpty()){
+//        "Name is empty"
+//    }
+//    else {
+//        "Your name is short"
+//    }
+//
+//
+//    println(msj)
 
+    // WHEN DATA CONTROL
 
-    if (name.isNotEmpty()) {
-        println("Len of the name ${name.length}")
-    } else {
-        println("Error! Empty name")
+    val colorName= "Carmesi"
+
+    when (colorName.lowercase()) {
+        "yellow" -> {
+            val anotherTask = true
+            println("$colorName is the color of joy ")
+        }
+        "red", "carmesi" -> println("$colorName is the color of blood")
+        else -> println("Ups! Color is not registered")
     }
 
-    // asignacion inmutable
-    val msj: String = if (name.length > 4) {
-        "Your name is long"
-    }  else if (name.isEmpty()){
-        "Name is empty"
+    val codeNum = 501
+    when (codeNum) {
+        in 200..299 -> println("Response $codeNum , Everything on order!")
+        in 400..500 -> println("Response $codeNum , Something went wrong")
+        else -> println("$codeNum no code register for this response")
     }
-    else {
-        "Your name is short"
-    }
+//    if (name.isNotEmpty()) println("Len of name is ${name.length}") else println("name is empty ")
 
+    val shoesSize = 45
+
+    // with assign to the value we always need to include de else for the
+    // default value
+    val msj = when(shoesSize){
+        41, 43 -> "Size available"
+        42, 44 -> "Short Stack"
+        45 -> "Only by order! your a big foot"
+        else -> "No stack"
+    }
 
     println(msj)
-
-
-//    if (name.isNotEmpty()) println("Len of name is ${name.length}") else println("name is empty ")
 }
